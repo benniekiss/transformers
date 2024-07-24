@@ -672,6 +672,7 @@ class WhisperGenerationMixin:
                 return_token_timestamps=return_token_timestamps,
                 do_condition_on_prev_tokens=do_condition_on_prev_tokens,
                 is_shortform=is_shortform,
+                attention_mask=attention_mask,
                 kwargs=kwargs,
             )
 
@@ -775,6 +776,7 @@ class WhisperGenerationMixin:
         return_token_timestamps,
         do_condition_on_prev_tokens,
         is_shortform,
+        attention_mask,
         kwargs,
     ):
         kwargs = copy.copy(kwargs)
@@ -806,6 +808,7 @@ class WhisperGenerationMixin:
                 prefix_allowed_tokens_fn=prefix_allowed_tokens_fn,
                 synced_gpus=synced_gpus,
                 decoder_input_ids=decoder_input_ids,
+                attention_mask=attention_mask,
                 **generate_kwargs,
             )
 
